@@ -28,7 +28,7 @@ S=$(echo "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")
 D=$(dirname "$S")  # Capture the (relative) dir...
 # ... and get an absolute path out of that
 export W3C_SERVER_DIR="$(readlink -f "$D")"
-GIT_ROOT=$(readlink -f "$W3C_SERVER_DIR/../../..")
+GIT_ROOT=$(readlink -f "$W3C_SERVER_DIR/../../../..")
 echo "Project root is $GIT_ROOT"
 
 # The way http_mgr is written, it includes server-1.0/utils,
