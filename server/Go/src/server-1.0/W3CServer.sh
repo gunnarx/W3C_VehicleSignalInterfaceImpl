@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$0" != bash ] ; then
+if [ "$(basename $0)" != bash ] ; then
   echo "This script should be *sourced* in your interactive shell (it is assuming bash)"
   echo "Please run:  . $0 or source $0"
   exit 1
