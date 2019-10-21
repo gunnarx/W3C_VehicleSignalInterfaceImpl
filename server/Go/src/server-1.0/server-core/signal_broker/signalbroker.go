@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"google.golang.org/grpc"
-	"W3C_VehicleSignalInterfaceImpl/server/Go/server-1.0/server-core/proto_files"
+	"proto_files"
 	log "github.com/sirupsen/logrus"
-	// "W3C_VehicleSignalInterfaceImpl/server/Go/server-1.0/server-core/util"
+	// "util"
 )
 
 const (

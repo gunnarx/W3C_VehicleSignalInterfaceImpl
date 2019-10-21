@@ -19,7 +19,7 @@ import (
     "encoding/json"
     "strconv"
 //    "strings"
-    "server-1.0/utils"
+    "utils"
 )
 
 // one muxServer component for service registration, one for the data communication
