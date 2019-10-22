@@ -38,7 +38,7 @@ add_gopath "$GIT_ROOT/server/Go"
 echo Setting up startme and stopme convenience functions
 
 startme() {
-    screen -d -m -S serverCore bash -c "cd $W3C_SERVER_DIR/server-core/src && go build && ./server-core"
+    screen -d -m -S serverCore bash -c "cd $W3C_SERVER_DIR/server-core/src && go build -o server-core && ./server-core"
     screen -d -m -S serviceMgr bash -c "cd $W3C_SERVER_DIR && go run service_mgr.go"
     screen -d -m -S wsMgr bash -c "cd $W3C_SERVER_DIR && go run ws_mgr.go"
     screen -d -m -S httpMgr bash -c "cd $W3C_SERVER_DIR && go run http_mgr.go"
