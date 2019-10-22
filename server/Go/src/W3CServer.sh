@@ -31,15 +31,14 @@ export W3C_SERVER_DIR="$(readlink -f "$D")"
 GIT_ROOT=$(readlink -f "$W3C_SERVER_DIR/../../..")
 echo "Project root is $GIT_ROOT"
 
-# The way http_mgr is written, it includes server-1.0/utils,
-# which must be then found relative to some part of $GOPATH
-# so therefore:
+# Imports need to be found in one of these GOPATH locations:
+add_gopath "$GIT_ROOT/"
 add_gopath "$GIT_ROOT/server/Go"
 
 echo Setting up startme and stopme convenience functions
 
 startme() {
-    screen -d -m -S serverCore bash -c "cd $W3C_SERVER_DIR/server-core && go build && ./server-core"
+    screen -d -m -S serverCore bash -c "cd $W3C_SERVER_DIR/server-core/src && go build && ./server-core"
     screen -d -m -S serviceMgr bash -c "cd $W3C_SERVER_DIR && go run service_mgr.go"
     screen -d -m -S wsMgr bash -c "cd $W3C_SERVER_DIR && go run ws_mgr.go"
     screen -d -m -S httpMgr bash -c "cd $W3C_SERVER_DIR && go run http_mgr.go"
