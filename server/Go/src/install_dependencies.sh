@@ -14,11 +14,7 @@ echo "GOROOT: $GOROOT"
 unset GOROOT
 
 # This is required to find several imports
-export GOPATH="$GOPATH:$GIT_ROOT/server/Go/"
-# This is required to find proto_files import
-export GOPATH="$GOPATH:$GIT_ROOT/server/Go/src/server-core"
-
-export GOPATH="$GOPATH:$GIT_ROOT/server/Go/"
+export GOPATH="$GOPATH:$GIT_ROOT"
 
 echo "GOPATH: $GOPATH"
 # Fetch all dependencies
